@@ -6,5 +6,5 @@ phases:
             dotnet: 3.1
     build:
         commands:
-            - dotnet build -c Release ./CodeBuildDotnetTestReportExample/CodeBuildDotnetTestReportExample.csproj
-            - dotnet test -c Release ./CodeBuildDotnetTestReportExample.Tests/CodeBuildDotnetTestReportExample.Tests.csproj
+            - dotnet build -c Release ./awsbeanstactest/awsbeanstactest.csproj
+            - dotnet test -c Release ./awsbeanstactest/awsbeanstactest.csproj
