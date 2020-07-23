@@ -3,7 +3,7 @@ version: 0.2
 phases:
     install:
         runtime-versions:
-            dotnet: 2.0.7
+            dotnet: 2.1
     build:
         commands:
             - dotnet build -c Release ./awsbeanstactest/awsbeanstactest.csproj
