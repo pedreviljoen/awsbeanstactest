@@ -9,6 +9,4 @@ phases:
             - dotnet restore
             - dotnet build -c Release ./awsbeanstactest/awsbeanstactest.csproj
             - dotnet test -c Release ./awsbeanstactest/awsbeanstactest.csproj
-    artifacts:
-        files:
-           - .\bin\Debug\netcoreapp3.1\*
+    
