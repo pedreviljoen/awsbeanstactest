@@ -11,8 +11,5 @@ build:
 commands:
 - echo Build started on `date`
 - dotnet publish -c release -o ./build_output ./awsbeanstactest/awscorewebapplication.csproj --no-restore
-artifacts:
-files:
-- CodeBuild-SampleCore/build_output/**/*
-- scripts/**/*
+
     
