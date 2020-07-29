@@ -3,8 +3,8 @@ version: 0.2
 phases:
   build:
     commands:
-      - dotnet restore
-      - dotnet build
+      - dotnet restore ./awsbeanstactest/awscorewebapplication.csproj
+      - dotnet build ./awsbeanstactest/awscorewebapplication.csproj
 artifacts:
   files:
     - .\bin\Debug\netcoreapp3.1\*
