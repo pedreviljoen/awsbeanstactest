@@ -4,17 +4,15 @@ phases:
         runtime-versions:
             dotnet: 3.1
 pre_build:
-commands:
-- echo Restore started on `date`
-- dotnet restore  ./awsbeanstactest/awscorewebapplication.csproj --verbosity detailed
+    commands:
+        - echo Restore started on `date`
+        - dotnet restore  ./awsbeanstactest/awscorewebapplication.csproj --verbosity detailed
 build:
-commands:
-- echo Build started on `date`
-- dotnet publish -c release -o ./build_output ./awsbeanstactest/awscorewebapplication.csproj --no-restore
+    commands:
+        - echo Build started on `date`
+        - dotnet publish -c Release -r linux-x64 --self-contained false ./awsbeanstactest/awscorewebapplication.csproj --no-restore
 artifacts:
   files:
     - '**/*'
-  
-            
-
-    
+    base-directory: ./bin/Release/netcoreapp3.1/linux-x64/publish/
+    discard-paths: no
