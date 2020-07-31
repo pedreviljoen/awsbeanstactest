@@ -3,9 +3,9 @@ version: 0.2
 phases:
   build:
     commands:
-      - dotnet restore ./awsbeanstactest/awscorewebapplication.csproj
-      - dotnet build ./awsbeanstactest/awscorewebapplication.csproj
-      - dotnet publish ./awsbeanstactest/awscorewebapplication.csproj -o site
+      - dotnet restore awscorewebapplication.csproj
+      - dotnet build awscorewebapplication.csproj
+      - dotnet publish awscorewebapplication.csproj -o site
   post_build:
     commands:
       - echo $CODEBUILD_SRC_DIR
