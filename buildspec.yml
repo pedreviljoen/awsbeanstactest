@@ -1,13 +1,17 @@
 version: 0.2
 
-pre_build:
-commands:
-- echo Restore started on `date`
-- dotnet restore  ./awsbeanstactest/awscorewebapplication.csproj --verbosity detailed
-build:
-commands:
-- echo Build started on `date`
-- dotnet publish -c Release -r linux-x64 --self-contained false ./awsbeanstactest/awscorewebapplication.csproj --no-restore
+phases:
+  build:
+    commands:
+      - dotnet restore ./awsbeanstactest/awscorewebapplication.csproj
+      - dotnet build ./awsbeanstactest/awscorewebapplication.csproj
+      - dotnet publish ./awsbeanstactest/awscorewebapplication.csproj -o site
+  post_build:
+    commands:
+      - echo $CODEBUILD_SRC_DIR
+      - cp aws-windows-deployment-manifest.json $CODEBUILD_SRC_DIR/awsbeanstactest/site/
 artifacts:
   files:
     - '**/*'
+  base-directory: '$CODEBUILD_SRC_DIR/awsbeanstactest/site/'
+  discard-paths: no
