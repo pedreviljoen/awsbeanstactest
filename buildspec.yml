@@ -9,9 +9,9 @@ phases:
   post_build:
     commands:
       - echo $CODEBUILD_SRC_DIR
-      - cp aws-windows-deployment-manifest.json $CODEBUILD_SRC_DIR/awsbeanstactest/site/
+      - cp aws-windows-deployment-manifest.json $CODEBUILD_SRC_DIR/site/
 artifacts:
   files:
     - '**/*'
-  base-directory: '$CODEBUILD_SRC_DIR/awsbeanstactest/site/'
+  base-directory: '$CODEBUILD_SRC_DIR/site/'
   discard-paths: no
